@@ -67,5 +67,11 @@ func (db Database) GetAll(item interface{}) {
 	db.rwLock.RLock()
 	defer db.rwLock.RUnlock()
 	db.db.Find(item)
+}
 
+func (db Database) Migrate(item interface{}) {
+	err := db.db.AutoMigrate(item)
+	if err != nil {
+		panic("Could not migrate database!")
+	}
 }
