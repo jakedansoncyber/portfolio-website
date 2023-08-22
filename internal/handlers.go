@@ -45,6 +45,7 @@ func handleBase(c *gin.Context, database *repository.Database) {
 	if err != nil {
 		return
 	}
+
 }
 
 // handlerBase - returns the index.html template, with film data
